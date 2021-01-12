@@ -19,7 +19,6 @@ public class Main extends Application {
             Scene scene = new Scene(root, 667, 492);
             primaryStage.setTitle("WELCOME TO MANAGEMENT LOGIN");
             primaryStage.setScene(scene);
-            primaryStage.centerOnScreen();
             primaryStage.show();
         } catch (Exception e) {
             e.printStackTrace();
