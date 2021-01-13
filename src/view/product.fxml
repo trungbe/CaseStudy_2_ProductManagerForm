@@ -1,14 +1,127 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.text.*?>
 <?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
+<?import javafx.geometry.*?>
+<?import javafx.geometry.Insets?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
 
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.ProductController">
-   <children>
-      <Button fx:id="btnLogout" layoutX="505.0" layoutY="14.0" mnemonicParsing="false" onAction="#logout" text="Logout" />
-   </children>
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1060.0" snapToPixel="false" style="-fx-border-color: black;" styleClass="b" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.ProductController">
+    <children>
+        <TableView fx:id="table" layoutX="75.0" layoutY="360.0" prefHeight="347.0" prefWidth="971.0">
+            <columns>
+                <TableColumn fx:id="idColumn" prefWidth="37.0" text="ID" />
+                <TableColumn fx:id="nameColumn" prefWidth="109.0" text="Name" />
+                <TableColumn fx:id="colorColumn" prefWidth="86.0" text="Color" />
+                <TableColumn fx:id="sizeColumn" prefWidth="90.0" text="Size" />
+                <TableColumn fx:id="brandColumn" prefWidth="73.0" text="Brand" />
+                <TableColumn fx:id="priceColumn" prefWidth="62.0" text="Price" />
+                <TableColumn fx:id="imageColumn" minWidth="0.0" prefWidth="121.0" text="Image" />
+                <TableColumn fx:id="desColumn" maxWidth="4977.0" prefWidth="388.0" text="Description" />
+            </columns>
+        </TableView>
+        <Text fill="#003ca1" layoutX="276.0" layoutY="53.0" stroke="#c90404" strokeType="OUTSIDE" strokeWidth="0.0" text="PRODUCT MANAGEMENT" textAlignment="CENTER" wrappingWidth="507.13671875">
+            <font>
+                <Font name="System Bold" size="36.0" />
+            </font>
+        </Text>
+        <VBox layoutX="110.0" layoutY="64.0" prefHeight="210.0" prefWidth="685.0">
+            <children>
+                <GridPane prefHeight="212.0" prefWidth="683.0">
+                    <children>
+                        <Label layoutX="10.0" layoutY="188.0" prefHeight="63.0" prefWidth="187.0" text="Price" GridPane.columnIndex="3">
+                            <font>
+                                <Font name="System Bold" size="16.0" />
+                            </font>
+                        </Label>
+                        <TextField fx:id="idText" prefHeight="63.0" prefWidth="187.0" promptText="1" GridPane.columnIndex="1" />
+                        <TextField fx:id="priceText" layoutX="116.0" layoutY="19.0" prefHeight="63.0" prefWidth="187.0" promptText="200000" GridPane.columnIndex="4" />
+                        <Label prefHeight="63.0" prefWidth="187.0" text="Size" GridPane.rowIndex="3">
+                            <font>
+                                <Font name="System Bold" size="16.0" />
+                            </font>
+                        </Label>
+                        <Label layoutX="10.0" layoutY="16.0" prefHeight="63.0" prefWidth="187.0" text="ID">
+                            <font>
+                                <Font name="System Bold" size="16.0" />
+                            </font>
+                        </Label>
+                        <TextField fx:id="nameText" prefHeight="63.0" prefWidth="187.0" promptText="Air Max 90" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                        <Label prefHeight="63.0" prefWidth="187.0" text="Name" GridPane.rowIndex="1">
+                            <font>
+                                <Font name="System Bold" size="16.0" />
+                            </font>
+                        </Label>
+                        <Label prefHeight="63.0" prefWidth="187.0" text="Color" GridPane.rowIndex="2">
+                            <font>
+                                <Font name="System Bold" size="16.0" />
+                            </font>
+                        </Label>
+                        <TextField fx:id="colorText" prefHeight="63.0" prefWidth="187.0" promptText="Black" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                        <Label layoutX="10.0" layoutY="51.0" prefHeight="63.0" prefWidth="187.0" text="Image" GridPane.columnIndex="3" GridPane.rowIndex="1">
+                            <font>
+                                <Font name="System Bold" size="16.0" />
+                            </font>
+                        </Label>
+                        <Label prefHeight="36.0" prefWidth="120.0" text="Brand" GridPane.rowIndex="4">
+                            <font>
+                                <Font name="System Bold" size="16.0" />
+                            </font>
+                        </Label>
+
+                        <Label prefHeight="63.0" prefWidth="187.0" text="Description" GridPane.columnIndex="3" GridPane.rowIndex="2">
+                            <font>
+                                <Font name="System Bold" size="16.0" />
+                            </font>
+                        </Label>
+                        <TextArea fx:id="desText" prefHeight="63.0" prefWidth="187.0" GridPane.columnIndex="4" GridPane.rowIndex="2" />
+                        <TextField fx:id="imageText" prefHeight="63.0" prefWidth="187.0" GridPane.columnIndex="4" GridPane.rowIndex="1" />
+                  <ComboBox fx:id="comboBoxSize" prefHeight="63.0" prefWidth="187.0" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                  <ComboBox fx:id="comboBoxBrand" prefHeight="63.0" prefWidth="187.0" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                    </children>
+                    <columnConstraints>
+                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="286.0" minWidth="10.0" prefWidth="75.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="489.0" minWidth="10.0" prefWidth="147.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="489.0" minWidth="10.0" prefWidth="20.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="489.0" minWidth="10.0" prefWidth="69.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="489.0" minWidth="10.0" prefWidth="151.0" />
+                    </columnConstraints>
+                    <rowConstraints>
+                        <RowConstraints maxHeight="70.0" minHeight="10.0" prefHeight="40.0" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="71.0" minHeight="10.0" prefHeight="40.0" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="71.0" minHeight="0.0" prefHeight="38.0" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="66.0" minHeight="10.0" prefHeight="39.0" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="53.0" minHeight="0.0" prefHeight="46.0" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="45.0" minHeight="0.0" prefHeight="2.0" vgrow="SOMETIMES" />
+                    </rowConstraints>
+                    <VBox.margin>
+                        <Insets />
+                    </VBox.margin>
+                </GridPane>
+            </children>
+        </VBox>
+        <TextField fx:id="searchText" layoutX="75.0" layoutY="292.0" prefHeight="39.0" prefWidth="278.0" promptText="Search" />
+        <VBox layoutX="385.0" layoutY="298.0" prefHeight="48.0" prefWidth="643.0">
+            <children>
+                <GridPane>
+                    <columnConstraints>
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                    </columnConstraints>
+                    <rowConstraints>
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                    </rowConstraints>
+                    <children>
+                        <Button mnemonicParsing="false" onAction="#addProduct" prefHeight="39.0" prefWidth="157.0" text="ADD" />
+                        <Button fx:id="btnUpdate" mnemonicParsing="false" prefHeight="39.0" prefWidth="157.0" text="UPDATE" GridPane.columnIndex="1" />
+                        <Button fx:id="btnDelete" mnemonicParsing="false" prefHeight="39.0" prefWidth="156.0" text="DELETE" GridPane.columnIndex="2" />
+                        <Button fx:id="btnLogout" mnemonicParsing="false" onAction="#logout" prefHeight="39.0" prefWidth="158.0" text="LOGOUT" GridPane.columnIndex="3" />
+                    </children>
+                </GridPane>
+            </children>
+        </VBox>
+    </children>
 </Pane>
