@@ -35,7 +35,7 @@
                                 <Font name="System Bold" size="16.0" />
                             </font>
                         </Label>
-                        <TextField fx:id="idText" prefHeight="63.0" prefWidth="187.0" promptText="1" GridPane.columnIndex="1" />
+                        <TextField fx:id="idText" prefHeight="39.0" prefWidth="192.0" promptText="1" GridPane.columnIndex="1" />
                         <TextField fx:id="priceText" layoutX="116.0" layoutY="19.0" prefHeight="63.0" prefWidth="187.0" promptText="200000" GridPane.columnIndex="4" />
                         <Label prefHeight="63.0" prefWidth="187.0" text="Size" GridPane.rowIndex="3">
                             <font>
@@ -117,7 +117,7 @@
                     <children>
                         <Button mnemonicParsing="false" onAction="#addProduct" prefHeight="39.0" prefWidth="157.0" text="ADD" />
                         <Button fx:id="btnUpdate" mnemonicParsing="false" prefHeight="39.0" prefWidth="157.0" text="UPDATE" GridPane.columnIndex="1" />
-                        <Button fx:id="btnDelete" mnemonicParsing="false" prefHeight="39.0" prefWidth="156.0" text="DELETE" GridPane.columnIndex="2" />
+                        <Button fx:id="btnDelete" mnemonicParsing="false" onAction="#deleteProduct" prefHeight="39.0" prefWidth="156.0" text="DELETE" GridPane.columnIndex="2" />
                         <Button fx:id="btnLogout" mnemonicParsing="false" onAction="#logout" prefHeight="39.0" prefWidth="158.0" text="LOGOUT" GridPane.columnIndex="3" />
                     </children>
                 </GridPane>

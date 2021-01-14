@@ -21,7 +21,7 @@ import java.util.List;
 import java.util.ResourceBundle;
 
 public class ProductController implements Initializable {
-    public static final String FILE_PRODUCT = "product.txt";
+    public static final String FILE_PRODUCT = "src\\model\\storage\\product.txt";
     private final ObservableList<Integer> listChoiceSize = FXCollections.observableArrayList(37, 38, 39, 40, 41, 42, 43);
     private final ObservableList<String> listChoiceBrand = FXCollections.observableArrayList("Adidas", "Nike", "Fila", "Newbalance");
     private ObservableList<Product> productList;
@@ -147,10 +147,11 @@ public class ProductController implements Initializable {
         writeFile();
     }
 
-
-
-
-
+    public void deleteProduct(ActionEvent actionEvent) {
+        Product selected = table.getSelectionModel().getSelectedItem();
+        productList.remove(selected);
+        writeFile();
+    }
 
     public void writeFile() {
         try {
@@ -184,4 +185,6 @@ public class ProductController implements Initializable {
         }
         return productList;
     }
+
+
 }
